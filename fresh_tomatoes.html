@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fast and Furious Movie Collection</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fast and Furious Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="2TAOizOnNPo" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="http://api.ning.com/files/aoq71LIlZOChX3eftNIu5RGmNOdK9a7PkZZbE1dyOvHhzCqylhhDdRFcDv2SzAIO-5-glP9eVwdSJJ5TnK2GmnIIJnZGG52B/fullhdhizliveofkeli1fastandfurious1turkcedublajizle.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 1</h2>
+    <h3>(2001)</h3>
+    <p>Los Angeles street racer Dominic Toretto falls under the suspicion of the LAPD as a string of high-speed electronics truck robberies rocks the area. Brian O'Connor, an officer of the LAPD, joins the ranks of Toretto's highly skilled racing crew undercover to convict Toretto. However, O'Connor finds himself both enamored with this new world and in love with Toretto's sister, Mia. As a rival racing crew gains strength, O'Connor must decide where his loyalties really lie.</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="F_VIM03DXWI" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="http://pop-break.com/wp-content/uploads/2015/04/2-Fast-2-Furious.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 2</h2>
+    <h3>(2003)</h3>
+    <p>After allowing fugitive Dominic Toretto (Vin Diesel) to evade arrest, former LAPD officer Brian O'Conner (Paul Walker) finds himself on the run from the FBI and leaves Los Angeles to start a new life. He travels across the U.S. in a red 2001 Mitsubishi 3000GT, entering various drag races and winning large amounts of money. The FBI issues a country-wide manhunt against Brian and one day, the police locate him and repossess his car, forcing him to leave on foot.</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="p8HQ2JLlc4E" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="http://www.freemovieposters.net/posters/fast_and_the_furious_tokyo_drift_the_2006_1517_poster.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 3</h2>
+    <h3>(2006)</h3>
+    <p>In Arizona, 17-year-old high school student Sean Boswell (Lucas Black) and Clay (Zachery Ty Bryan) race their cars to win Clay's girlfriend Cindy (Nikki Griffin). When Sean cuts through a structure and catches up to Clay, Clay hits Sean's car repeatedly until a high speed turn which causes the pair to both crash; Clay's wealthy family helps him escape punishment, but Sean's numerous past racing activities causes his mother to send him to live with his father in Tokyo, who is stationed there for the U.S. Navy.</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="4CIELQwMjrg" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="http://www.agentsofguard.com/wp-content/uploads/2013/05/fastandthefurious4_poster.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 4</h2>
+    <h3>(2009)</h3>
+    <p>Five years after leaving Los Angeles, Dominic Toretto and his new crew, consisting of his girlfriend Letty, Tego Leo, Rico Santos, Cara Mirtha, and Han Seoul-Oh, are hijacking fuel tankers in the Dominican Republic. Dominic begins to suspect that the police are hot on their trail, after Han informs him that one of his garages have been raided, forcing the crew to disband and go their separate ways. </p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="tPZfa7bZzF4" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/e5/f7/e7/e5f7e7645aa51751e12d74830f1c2c35.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 5</h2>
+    <h3>(2011)</h3>
+    <p>When Dominic Dom Toretto is being transported to Lompoc Prison by bus, his sister Mia Toretto and friend Brian O'Conner lead an assault on the bus, causing it to crash and freeing Dom. While the authorities search for them, the trio escapes to Rio de Janeiro. Awaiting Dom's arrival, Mia and Brian join their friend Vince and other participants on a job to steal three cars from a train. Brian and Mia discover that agents from the U.S. Drug Enforcement Administration (DEA) are also on the train and that the cars are seized property. </p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="dKi5XoeTN0k" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/FastandFurious6-teaserposter.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 6</h2>
+    <h3>(2013)</h3>
+    <p>Since Dom (Vin Diesel) and Brian's (Paul Walker) heist in Rio left them and their crew very rich people, they've scattered across the globe; however, they must still live as fugitives, unable to return home to their families. Meanwhile, Agent Hobbs (Dwayne Johnson) has been tracking a gang of lethally skilled mercenary drivers whose second-in-command is someone Dom knows. Unable to take them down himself, Hobbs asks Dom and his crew for help in exchange for full pardons for everyone.</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Skpu5HaVkOc" data-toggle="modal" data-target="#trailer">
+    <h6>Click to view movie trailer</h6>
+    <img src="http://bookofswag.co.za/wp-content/uploads/2015/04/FF7-A0-Poster.jpg" width="220" height="342"></br>
+    <img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32"><img src="http://pngimg.com/upload/star_PNG1580.png" width="32"height="32">
+    <h2>Fast and Furious 7</h2>
+    <h3>(2015)</h3>
+    <p>After defeating Owen Shaw and his crew and securing amnesty for their past crimes, Dominic Dom Toretto, Brian O'Conner, and the rest of their team have returned to the United States to live normal lives again. Brian begins to accustom himself to life as a father, while Dom tries to help Letty Ortiz regain her memories. Meanwhile, Owen's older brother, Deckard Shaw, breaks into the secure hospital the comatose Owen is being held in and swears vengeance against Dom, before breaking into Luke Hobbs' DSS office to extract profiles of Dom's crew. After revealing his identity, Shaw engages Hobbs in a fight, and escapes when he detonates a bomb that severely injures Hobbs. Dom later learns from his sister Mia that she is pregnant again and convinces her to tell Brian. However, a bomb, disguised in a package sent from Tokyo, explodes and destroys the Toretto house just seconds after Han, a member of their team, is killed by Shaw in Tokyo. Dom later visits Hobbs in a hospital, where he learns that Shaw is a rogue special forces assassin seeking to avenge his brother. Dom then travels to Tokyo to claim Han's body, where he meets and races Sean Boswell, a friend of Han's, who gives him personal items found at Han's crash site.</p>
+</div>
+
+    </div>
+  </body>
+</html>
